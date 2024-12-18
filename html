@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MiPlayer - Professional iOS video downloader and player, supporting video downloads from TikTok, YouTube, Instagram, Twitter and more, with powerful privacy protection features.">
+    <meta name="keywords" content="MiPlayer,iOS downloader,video saver,watermark removal,TikTok downloader,YouTube downloader,video downloader">
+    <title>MiPlayer - Global Video Downloader for TikTok, YouTube & More</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f6f8fd 0%, #f3f4f8 100%);
+        }
+
+        header {
+            background: linear-gradient(120deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 1rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        .feature-card:nth-child(1)::before {
+            background: linear-gradient(90deg, #FF0080, #FF8C00);
+        }
+
+        .feature-card:nth-child(2)::before {
+            background: linear-gradient(90deg, #7928CA, #FF0080);
+        }
+
+        .feature-card:nth-child(3)::before {
+            background: linear-gradient(90deg, #00DFD8, #007CF0);
+        }
+
+        .feature-card:nth-child(4)::before {
+            background: linear-gradient(90deg, #7928CA, #00DFD8);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .platforms {
+            background: white;
+            padding: 3rem 1rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .platform-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-item:nth-child(1) {
+            background: linear-gradient(135deg, #25F4EE 0%, #000000 100%);
+            color: white;
+        }
+
+        .platform-item:nth-child(2) {
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+            color: white;
+        }
+
+        .platform-item:nth-child(3) {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .platform-item:nth-child(4) {
+            background: linear-gradient(135deg, #1DA1F2 0%, #0D8BD9 100%);
+            color: white;
+        }
+
+        .platform-item:nth-child(5) {
+            background: linear-gradient(135deg, #FF4040 0%, #C73333 100%);
+            color: white;
+        }
+
+        .platform-item:nth-child(6) {
+            background: linear-gradient(135deg, #00B4FF 0%, #0093D9 100%);
+            color: white;
+        }
+
+        .platform-item:nth-child(7) {
+            background: linear-gradient(135deg, #07C160 0%, #05A050 100%);
+            color: white;
+        }
+
+        .platform-item:nth-child(8) {
+            background: linear-gradient(135deg, #FF2442 0%, #D91E36 100%);
+            color: white;
+        }
+
+        .platform-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .highlight-section {
+            background: linear-gradient(120deg, #0093E9 0%, #80D0C7 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #FF0080, #7928CA);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(90deg, #7928CA, #FF0080);
+        }
+
+        footer {
+            background: linear-gradient(120deg, #4158D0 0%, #C850C0 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card h3 {
+            background: linear-gradient(90deg, #FF0080, #7928CA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+        }
+
+        .platform-item {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <header class="animate-gradient">
+        <div class="container">
+            <h1>MiPlayer</h1>
+            <p style="font-size: 1.2rem; margin: 1rem 0;">Ultimate Video Downloader for All Platforms</p>
+            <p style="margin: 1rem 0; opacity: 0.9;">One-Click Download, Watermark Removal & Private Playback</p>
+            <a href="https://apps.apple.com/us/app/miplayer/id6736584797?l=zh-Hans-CN" class="cta-button" target="_blank">Download Now</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="features">
+            <div class="feature-card">
+                <h3>Multi-Platform Support</h3>
+                <p>Download content from all major social media platforms with just one click</p>
+            </div>
+            <div class="feature-card">
+                <h3>Watermark-Free</h3>
+                <p>Professional watermark removal for crystal clear videos</p>
+            </div>
+            <div class="feature-card">
+                <h3>Universal Player</h3>
+                <p>Support for virtually all video formats for seamless playback</p>
+            </div>
+            <div class="feature-card">
+                <h3>Privacy Protection</h3>
+                <p>Advanced privacy features to keep your viewing history secure</p>
+            </div>
+        </section>
+
+        <section class="platforms">
+            <h2 style="text-align: center;">Supported Platforms</h2>
+            <div class="platform-grid">
+                <div class="platform-item">TikTok</div>
+                <div class="platform-item">YouTube</div>
+                <div class="platform-item">Instagram</div>
+                <div class="platform-item">Twitter</div>
+                <div class="platform-item">Douyin</div>
+                <div class="platform-item">Kuaishou</div>
+                <div class="platform-item">WeChat</div>
+                <div class="platform-item">Xiaohongshu</div>
+            </div>
+        </section>
+
+        <section class="highlight-section">
+            <h2>Global Platform Coverage</h2>
+            <p style="max-width: 800px; margin: 1rem auto;">
+                From TikTok to YouTube, Instagram to Twitter, and popular platforms like Douyin and Xiaohongshu,
+                MiPlayer helps you download and save your favorite content. High-quality downloads, no watermarks,
+                and complete privacy protection.
+            </p>
+            <a href="https://apps.apple.com/us/app/miplayer/id6736584797?l=zh-Hans-CN" class="cta-button" target="_blank">Get it on App Store</a>
+        </section>
+
+        <section style="text-align: center; padding: 4rem 0;">
+            <h2>Why Choose MiPlayer?</h2>
+            <p style="max-width: 800px; margin: 2rem auto;">
+                As the leading iOS video downloader, MiPlayer offers an all-in-one solution for your video needs.
+                With support for global platforms, professional watermark removal, universal format playback,
+                and robust privacy protection, we make video downloading and viewing simple and secure.
+            </p>
+            <a href="https://apps.apple.com/us/app/miplayer/id6736584797?l=zh-Hans-CN" class="cta-button" target="_blank">Get it on App Store</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MiPlayer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
